@@ -7,10 +7,17 @@ interface Feature {
   description: string;
 }
 
-// Placeholder developer features — replace copy with real content.
 const FEATURES: Feature[] = [
-  { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
-  { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
+  {
+    title: "Screen in real time",
+    description:
+      "Continuously match identities against sanctions, PEP, and watchlists — updated as the lists change, not once a year.",
+  },
+  {
+    title: "Monitor after onboarding",
+    description:
+      "Risk does not end at sign-up. Fortgate AML watches for changes in status and behavior across the full lifecycle.",
+  },
   { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
   { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
 ];
