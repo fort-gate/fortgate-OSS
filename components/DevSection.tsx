@@ -46,7 +46,7 @@ function FeatureBlock({ feature }: { feature: Feature }) {
         <h3 className="text-body-lg font-bold text-text-primary">
           {feature.title}
         </h3>
-        <p className="mt-1 text-body-lg-mobile text-text-muted md:text-body-lg">
+        <p className="mt-1 text-body-lg-mobile text-text-secondary md:text-body-lg">
           {feature.description}
         </p>
       </div>
@@ -137,7 +137,7 @@ export default function DevSection() {
               <h2 className="mb-5 text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
                 Compliance that never stops watching
               </h2>
-              <p className="mb-8 text-body-lg-mobile text-text-muted md:text-body-lg">
+              <p className="mb-8 text-body-lg-mobile text-text-secondary md:text-body-lg">
                 Fortgate AML extends the same engine from onboarding into
                 ongoing protection. It catches risk continuously — not just at
                 sign-up — and works on the identity you already verified, so

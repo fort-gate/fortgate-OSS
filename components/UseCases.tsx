@@ -71,7 +71,7 @@ export default function UseCases() {
             <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
               One verification, reusable across every platform
             </h2>
-            <p className="mt-5 text-body-lg-mobile text-text-muted md:text-body-lg">
+            <p className="mt-5 text-body-lg-mobile text-text-secondary md:text-body-lg">
               Fortgate ID turns a completed identity check into a reusable,
               privacy-preserving proof. It ends repeated verification and lets
               platforms trust each other — here is what it does and how.
@@ -93,7 +93,7 @@ export default function UseCases() {
                 <h3 className="text-body-lg font-bold text-text-primary">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-body-lg-mobile text-text-muted md:text-body-lg">
+                <p className="mt-2 text-body-lg-mobile text-text-secondary md:text-body-lg">
                   {item.description}
                 </p>
               </article>

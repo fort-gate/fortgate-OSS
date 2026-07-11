@@ -84,7 +84,7 @@ export default function Security() {
                   <h3 className="text-body-lg font-bold text-text-primary">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-body-lg-mobile text-text-muted md:text-body-lg">
+                  <p className="mt-1 text-body-lg-mobile text-text-secondary md:text-body-lg">
                     {item.body}
                   </p>
                 </div>

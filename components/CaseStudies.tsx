@@ -77,7 +77,7 @@ export default function CaseStudies() {
                 <h3 className="mt-5 text-body-lg font-bold text-text-primary">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-label text-text-muted">{step.body}</p>
+                <p className="mt-2 text-label text-text-secondary">{step.body}</p>
               </article>
             </Reveal>
           ))}

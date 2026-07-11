@@ -93,7 +93,7 @@ export default function Developers() {
                       <h3 className="text-body-lg font-bold text-text-primary">
                         {p.title}
                       </h3>
-                      <p className="mt-1 text-body-lg-mobile text-text-muted md:text-body-lg">
+                      <p className="mt-1 text-body-lg-mobile text-text-secondary md:text-body-lg">
                         {p.body}
                       </p>
                     </div>
