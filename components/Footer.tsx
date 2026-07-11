@@ -57,7 +57,7 @@ export default function Footer() {
                 <Image src={logoWordmark} alt="Fortgate" className="h-7 w-auto" />
               </a>
               <span className="text-body-lg-mobile text-text-muted md:text-body-lg">
-                Placeholder tagline goes here.
+                The integrated identity and compliance layer.
               </span>
             </div>
 
