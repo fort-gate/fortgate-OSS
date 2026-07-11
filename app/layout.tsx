@@ -4,8 +4,9 @@ import LenisProvider from "@/components/LenisProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Fortgate — Placeholder Title",
-  description: "Placeholder description. Replace with final copy.",
+  title: "Fortgate — The integrated identity and compliance layer",
+  description:
+    "Verify a user once, then let that verified identity travel securely across every product — reusable, privacy-preserving, and audit-ready. Fortgate ID for reusable verification, Fortgate AML for continuous screening.",
 };
 
 export default function RootLayout({
