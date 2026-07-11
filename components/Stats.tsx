@@ -13,12 +13,12 @@ interface Stat {
   label: string;
 }
 
-// Placeholder metrics — replace values and labels with real figures.
+// Pre-launch: capability-framed metrics, not traction numbers (none exist yet).
 const STATS: Stat[] = [
-  { value: 99.9, suffix: "%", decimals: 1, label: "Placeholder uptime" },
-  { value: 250, suffix: "M+", label: "Placeholder requests" },
-  { value: 40, suffix: "k", label: "Placeholder customers" },
-  { value: 12, suffix: "x", label: "Placeholder improvement" },
+  { value: 1, suffix: "×", label: "Verify once, reuse across every connected platform" },
+  { value: 5, prefix: "<", suffix: "s", label: "Proof generation, not days of manual review" },
+  { value: 0, label: "Personal data exposed when a proof is validated" },
+  { value: 100, suffix: "%", label: "Verifiable audit trail, anchored on-chain" },
 ];
 
 function StatItem({ stat }: { stat: Stat }) {
