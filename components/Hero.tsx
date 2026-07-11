@@ -13,7 +13,7 @@ export default function Hero() {
       <Container className="relative">
         <div className="grid grid-cols-1 items-center gap-12 py-24 lg:grid-cols-2 lg:gap-8 lg:py-40">
           {/* Left: copy */}
-          <div className="relative z-10 max-w-xl">
+          <div className="relative z-10 min-w-0 max-w-xl">
             <h1
               className="text-h1-mobile font-bold leading-[1.05] tracking-tight text-text-primary md:text-h1 animate-fade-rise"
               style={{ animationDelay: "0s" }}
@@ -46,7 +46,7 @@ export default function Hero() {
 
           {/* Right: product diagram — verify once, reuse everywhere */}
           <div
-            className="relative flex items-center justify-center animate-fade-rise"
+            className="relative flex min-w-0 items-center justify-center animate-fade-rise"
             style={{ animationDelay: "0.24s" }}
           >
             <HeroVisual />

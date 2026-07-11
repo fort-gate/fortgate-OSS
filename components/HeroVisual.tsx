@@ -2,16 +2,16 @@ import Icon from "@/components/ui/Icon";
 
 function PlatformNode({ label }: { label: string }) {
   return (
-    <div className="rounded-[12px] border border-border bg-surface-3 p-3">
-      <div className="flex items-center gap-2">
-        <Icon name="building" size={16} className="text-text-muted" />
+    <div className="min-w-0 rounded-[12px] border border-border bg-surface-3 p-3">
+      <div className="flex min-w-0 items-center gap-2">
+        <Icon name="building" size={16} className="shrink-0 text-text-muted" />
         <span className="truncate text-label font-medium text-text-primary">
           {label}
         </span>
       </div>
-      <div className="mt-2 inline-flex items-center gap-1 text-label text-accent-violet">
-        <Icon name="check" size={13} />
-        <span className="text-text-muted">Reused · no re-check</span>
+      <div className="mt-2 flex items-start gap-1 text-label text-accent-violet">
+        <Icon name="check" size={13} className="mt-0.5 shrink-0" />
+        <span className="text-text-muted">Reused</span>
       </div>
     </div>
   );
@@ -23,7 +23,7 @@ function PlatformNode({ label }: { label: string }) {
  */
 export default function HeroVisual() {
   return (
-    <div className="relative w-full max-w-[460px]">
+    <div className="relative w-full min-w-0 max-w-[460px]">
       {/* soft ambient wash, kept subtle */}
       <div
         aria-hidden
@@ -49,9 +49,9 @@ export default function HeroVisual() {
               ZK proof
             </span>
           </div>
-          <div className="mt-3 flex items-center gap-2 border-t border-border pt-3">
-            <Icon name="lock" size={13} className="text-text-muted" />
-            <span className="font-mono text-[12px] text-text-muted">
+          <div className="mt-3 flex min-w-0 items-start gap-2 border-t border-border pt-3">
+            <Icon name="lock" size={13} className="mt-0.5 shrink-0 text-text-muted" />
+            <span className="min-w-0 break-all font-mono text-[12px] leading-relaxed text-text-muted">
               proof · 0x7f3a…c21e · anchored on-chain
             </span>
           </div>
