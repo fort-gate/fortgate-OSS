@@ -10,6 +10,15 @@
   --color-text-muted: #9ca3af;
   --color-card-surface: rgba(255, 255, 255, 0.045);
   --color-border: rgba(255, 255, 255, 0.08);
+
+  /* RGB channel companions of the tokens above — same values, space-separated
+     so Tailwind can inject <alpha-value> (enables /opacity modifiers). */
+  --color-background-rgb: 10 10 15;
+  --color-accent-violet-rgb: 139 92 246;
+  --color-accent-blue-rgb: 59 130 246;
+  --color-text-primary-rgb: 255 255 255;
+  --color-text-muted-rgb: 156 163 175;
+
   --radius-card: 20px;
   --max-width: 1200px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);

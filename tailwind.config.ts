@@ -5,11 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--color-background)",
-        "accent-violet": "var(--color-accent-violet)",
-        "accent-blue": "var(--color-accent-blue)",
-        "text-primary": "var(--color-text-primary)",
-        "text-muted": "var(--color-text-muted)",
+        // rgb(var(--*-rgb) / <alpha-value>) so /opacity modifiers work while
+        // the hex tokens in globals.css remain the source of truth.
+        background: "rgb(var(--color-background-rgb) / <alpha-value>)",
+        "accent-violet": "rgb(var(--color-accent-violet-rgb) / <alpha-value>)",
+        "accent-blue": "rgb(var(--color-accent-blue-rgb) / <alpha-value>)",
+        "text-primary": "rgb(var(--color-text-primary-rgb) / <alpha-value>)",
+        "text-muted": "rgb(var(--color-text-muted-rgb) / <alpha-value>)",
+        // These already carry their own alpha; used at full strength.
         "card-surface": "var(--color-card-surface)",
         border: "var(--color-border)",
       },

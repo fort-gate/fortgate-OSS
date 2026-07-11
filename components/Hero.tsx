@@ -2,71 +2,74 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 
 /**
- * Hero — two-line H1, Body Large subcopy, filled + outline CTAs, and a radial
- * glow visual behind. Entrance uses the fade-rise keyframe (staggered by delay).
+ * Hero — left-aligned copy column with a filled + outline CTA, paired with a
+ * frosted glass panel containing a glowing orb. Ambient glow is a soft blurred
+ * accent wash behind the visual (no hard edges). Entrance uses fade-rise.
  */
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Radial glow background */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-hero-glow"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
-      />
-
       <Container className="relative">
-        <div className="flex flex-col items-center py-24 text-center md:py-40">
-          <span
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card-surface px-4 py-1.5 text-label text-text-muted animate-fade-rise"
-            style={{ animationDelay: "0s" }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-violet" />
-            Placeholder announcement badge
-          </span>
+        <div className="grid grid-cols-1 items-center gap-12 py-24 lg:grid-cols-2 lg:gap-8 lg:py-40">
+          {/* Left: copy */}
+          <div className="relative z-10 max-w-xl">
+            <h1
+              className="text-h1-mobile font-bold tracking-tight text-text-primary md:text-h1 animate-fade-rise"
+              style={{ animationDelay: "0s" }}
+            >
+              Finance moves faster on programmable rails.
+            </h1>
 
-          <h1
-            className="max-w-3xl text-h1-mobile font-bold tracking-tight text-text-primary md:text-h1 animate-fade-rise"
-            style={{ animationDelay: "0.08s" }}
-          >
-            Placeholder headline that
-            <br />
-            spans two clean lines
-          </h1>
+            <p
+              className="mt-6 max-w-md text-body-lg-mobile text-text-muted md:text-body-lg animate-fade-rise"
+              style={{ animationDelay: "0.08s" }}
+            >
+              One infrastructure layer for settlement, treasury, risk, and
+              real-time financial data—built for teams that cannot compromise on
+              control.
+            </p>
 
-          <p
-            className="mt-6 max-w-xl text-body-lg-mobile text-text-muted md:text-body-lg animate-fade-rise"
-            style={{ animationDelay: "0.16s" }}
-          >
-            Placeholder subcopy goes here. One or two sentences describing the
-            product value proposition. Replace with final copy.
-          </p>
-
-          <div
-            className="mt-9 flex flex-col items-center gap-3 sm:flex-row animate-fade-rise"
-            style={{ animationDelay: "0.24s" }}
-          >
-            <Button href="#" variant="filled" size="lg" className="w-full sm:w-auto">
-              Get started
-            </Button>
-            <Button href="#" variant="outline" size="lg" className="w-full sm:w-auto">
-              Book a demo
-            </Button>
+            <div
+              className="mt-9 flex flex-col gap-3 sm:flex-row animate-fade-rise"
+              style={{ animationDelay: "0.16s" }}
+            >
+              <Button href="#" variant="filled" size="md" className="w-full sm:w-auto">
+                Start building
+              </Button>
+              <Button href="#" variant="outline" size="md" className="w-full sm:w-auto">
+                Explore the platform
+              </Button>
+            </div>
           </div>
 
-          {/* Product visual placeholder */}
+          {/* Right: glass panel with glowing orb */}
           <div
-            className="mt-16 w-full max-w-4xl animate-fade-rise"
-            style={{ animationDelay: "0.32s" }}
+            className="relative flex items-center justify-center animate-fade-rise"
+            style={{ animationDelay: "0.24s" }}
           >
-            <div className="aspect-[16/9] w-full rounded-card border border-border bg-card-surface backdrop-blur-sm">
-              <div className="grid h-full place-items-center">
-                <span className="text-label text-text-muted">
-                  Product visual placeholder
-                </span>
+            {/* Ambient glow behind the panel — soft, even, violet-tinted */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute h-[112%] w-[112%] rounded-full bg-accent-violet/[0.09] blur-[100px]"
+            />
+
+            <div className="relative aspect-square w-full max-w-[440px]">
+              {/* Frosted glass panel — uniformly lighter than background */}
+              <div className="absolute inset-0 overflow-hidden rounded-[32px] border border-text-primary/10 bg-gradient-to-br from-text-primary/[0.22] via-text-primary/[0.15] to-text-primary/[0.11] shadow-[0_20px_70px_-30px] shadow-accent-violet/20 backdrop-blur-xl">
+                {/* Inner top-left highlight */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-br from-text-primary/[0.06] to-transparent"
+                />
+
+                {/* Glowing orb — stacked blurred accent layers, white core */}
+                <div className="absolute inset-0 grid place-items-center">
+                  <span className="absolute h-4/5 w-4/5 rounded-full bg-accent-violet/25 blur-[70px]" />
+                  <span className="absolute h-44 w-44 rounded-full bg-accent-violet/45 blur-[50px]" />
+                  <span className="absolute h-24 w-24 rounded-full bg-accent-violet/70 blur-[28px]" />
+                  <span className="absolute h-10 w-10 rounded-full bg-accent-violet blur-[12px]" />
+                  <span className="relative h-4 w-4 rounded-full bg-text-primary shadow-[0_0_20px] shadow-text-primary/80" />
+                </div>
               </div>
             </div>
           </div>
