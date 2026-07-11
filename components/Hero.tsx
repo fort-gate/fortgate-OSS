@@ -17,16 +17,17 @@ export default function Hero() {
               className="text-h1-mobile font-bold tracking-tight text-text-primary md:text-h1 animate-fade-rise"
               style={{ animationDelay: "0s" }}
             >
-              Finance moves faster on programmable rails.
+              Verify once. Prove compliance everywhere.
             </h1>
 
             <p
-              className="mt-6 max-w-md text-body-lg-mobile text-text-muted md:text-body-lg animate-fade-rise"
+              className="mt-6 max-w-lg text-body-lg-mobile text-text-muted md:text-body-lg animate-fade-rise"
               style={{ animationDelay: "0.08s" }}
             >
-              One infrastructure layer for settlement, treasury, risk, and
-              real-time financial data—built for teams that cannot compromise on
-              control.
+              Fortgate is the integrated identity and compliance layer for
+              regulated platforms. Verify a user a single time, then let that
+              verified identity travel securely across every product — without
+              repeating the process or exposing the underlying data.
             </p>
 
             <div
