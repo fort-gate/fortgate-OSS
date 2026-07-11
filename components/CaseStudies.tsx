@@ -2,71 +2,71 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
 
-interface CaseStudy {
+interface Step {
+  step: string;
   title: string;
-  category: string;
-  href: string;
+  body: string;
 }
 
-// Placeholder case studies — replace titles and imagery with real assets.
-const CASE_STUDIES: CaseStudy[] = [
-  { title: "Placeholder case study title", category: "Placeholder", href: "#" },
-  { title: "Placeholder case study title", category: "Placeholder", href: "#" },
-  { title: "Placeholder case study title", category: "Placeholder", href: "#" },
-  { title: "Placeholder case study title", category: "Placeholder", href: "#" },
+// Repurposed from the case-studies grid: the Fortgate ID flow, four steps.
+const STEPS: Step[] = [
+  {
+    step: "01",
+    title: "Capture",
+    body: "The user completes onboarding once — biometrics, signature, document, and data captured in a single flow.",
+  },
+  {
+    step: "02",
+    title: "Verify",
+    body: "The Fortgate ID Engine runs authorization checks, screens against watchlists, and binds a hardware trust signature.",
+  },
+  {
+    step: "03",
+    title: "Prove",
+    body: "The engine generates a zero-knowledge proof and anchors it on-chain — verified, private, and reusable.",
+  },
+  {
+    step: "04",
+    title: "Reuse",
+    body: "Any connected platform validates the proof instantly, with no repeated checks and no exposed data.",
+  },
 ];
 
 export default function CaseStudies() {
   return (
-    <Section id="case-studies">
+    <Section id="how-it-works">
       <Container>
         <Reveal>
-          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl">
-              <p className="mb-3 text-label uppercase tracking-wider text-accent-violet">
-                Placeholder eyebrow
-              </p>
-              <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
-                Placeholder case studies heading
-              </h2>
-            </div>
-            <a
-              href="#"
-              className="group inline-flex items-center gap-2 text-label font-medium text-text-primary"
-            >
-              All case studies
-              <svg
-                width="14" height="14" viewBox="0 0 14 14" aria-hidden
-                className="transition-transform duration-300 ease-smooth group-hover:translate-x-1"
-              >
-                <path d="M3 7h8M7 3l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
+          <div className="mb-12 max-w-2xl">
+            <p className="mb-3 text-label uppercase tracking-wider text-accent-violet">
+              How it works
+            </p>
+            <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
+              From onboarding to reusable proof, in four steps
+            </h2>
           </div>
         </Reveal>
 
         {/* 1 col mobile / 2 tablet / 4 desktop, 24px gap */}
         <div className="grid grid-cols-1 gap-grid sm:grid-cols-2 lg:grid-cols-4">
-          {CASE_STUDIES.map((study, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <a
-                href={study.href}
-                className="group block overflow-hidden rounded-card border border-border bg-card-surface"
-              >
-                {/* Tall image with title overlaid */}
-                <div className="relative aspect-[3/4] w-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-violet/25 to-accent-blue/10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="absolute inset-0 flex flex-col justify-between p-5">
-                    <span className="w-fit rounded-full border border-border bg-background/40 px-3 py-1 text-label text-text-muted backdrop-blur-sm">
-                      {study.category}
-                    </span>
-                    <h3 className="text-body-lg font-bold leading-tight text-text-primary">
-                      {study.title}
-                    </h3>
-                  </div>
+          {STEPS.map((step, i) => (
+            <Reveal key={step.step} delay={i * 0.1}>
+              <article className="relative flex aspect-[3/4] flex-col justify-between overflow-hidden rounded-card border border-border bg-card-surface p-6">
+                {/* Tinted gradient wash */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-violet/20 to-accent-blue/5"
+                />
+                <span className="relative text-h2-mobile font-bold leading-none text-accent-violet/70">
+                  {step.step}
+                </span>
+                <div className="relative">
+                  <h3 className="text-body-lg font-bold text-text-primary">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-label text-text-muted">{step.body}</p>
                 </div>
-              </a>
+              </article>
             </Reveal>
           ))}
         </div>
