@@ -1,17 +1,53 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
+import Icon from "@/components/ui/Icon";
 import logoWordmark from "@/public/brand/logo-wordmark.png";
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
 
 interface FooterColumn {
   heading: string;
-  links: string[];
+  links: FooterLink[];
 }
 
 const COLUMNS: FooterColumn[] = [
-  { heading: "Products", links: ["Fortgate ID", "Fortgate AML", "How it works", "Pricing"] },
-  { heading: "Solutions", links: ["Reusable identity", "Continuous AML", "Audit readiness"] },
-  { heading: "Developers", links: ["Documentation", "API reference", "Status"] },
-  { heading: "Resources", links: ["About", "Contact", "Privacy", "Terms"] },
+  {
+    heading: "Products",
+    links: [
+      { label: "Fortgate ID", href: "#fortgate-id" },
+      { label: "Fortgate AML", href: "#fortgate-aml" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Pricing", href: "#" },
+    ],
+  },
+  {
+    heading: "Solutions",
+    links: [
+      { label: "Reusable identity", href: "#fortgate-id" },
+      { label: "Continuous AML", href: "#fortgate-aml" },
+      { label: "Audit readiness", href: "#security" },
+    ],
+  },
+  {
+    heading: "Developers",
+    links: [
+      { label: "Documentation", href: "#developers" },
+      { label: "API reference", href: "#developers" },
+      { label: "Status", href: "#" },
+    ],
+  },
+  {
+    heading: "Resources",
+    links: [
+      { label: "About", href: "#" },
+      { label: "Contact", href: "#contact" },
+      { label: "Privacy", href: "#" },
+      { label: "Terms", href: "#" },
+    ],
+  },
 ];
 
 type SocialName = "x" | "github" | "linkedin";
@@ -35,13 +71,13 @@ export default function Footer() {
                   {col.heading}
                 </p>
                 <ul className="space-y-3">
-                  {col.links.map((link, i) => (
-                    <li key={`${col.heading}-${i}`}>
+                  {col.links.map((link) => (
+                    <li key={link.label}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-label text-text-muted transition-colors duration-200 ease-smooth hover:text-text-primary"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
@@ -76,6 +112,27 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+          </div>
+
+          {/* Status + region */}
+          <div className="mt-8 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href="#"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface-1 px-3 py-1.5 text-label text-text-muted transition-colors hover:text-text-primary"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-blue/60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-blue" />
+              </span>
+              All systems operational
+            </a>
+            <button
+              type="button"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface-1 px-3 py-1.5 text-label text-text-muted transition-colors hover:text-text-primary"
+            >
+              <Icon name="globe" size={15} />
+              Global · English
+            </button>
           </div>
 
           {/* Copyright */}
