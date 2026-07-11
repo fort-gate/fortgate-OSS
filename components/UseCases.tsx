@@ -9,8 +9,16 @@ interface UseCase {
 
 // Placeholder use cases — replace copy and swap the visual for real assets.
 const USE_CASES: UseCase[] = [
-  { title: "Placeholder use case", description: "One line describing this use case." },
-  { title: "Placeholder use case", description: "One line describing this use case." },
+  {
+    title: "Verify once, reuse forever",
+    description:
+      "A completed verification becomes a portable proof. Users skip the process on every new platform that trusts Fortgate.",
+  },
+  {
+    title: "Prove without exposing",
+    description:
+      "A zero-knowledge proof confirms a user is verified and cleared — without revealing the underlying documents or personal data.",
+  },
   { title: "Placeholder use case", description: "One line describing this use case." },
   { title: "Placeholder use case", description: "One line describing this use case." },
   { title: "Placeholder use case", description: "One line describing this use case." },
