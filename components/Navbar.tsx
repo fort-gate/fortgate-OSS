@@ -53,9 +53,9 @@ const NAV_ITEMS: NavItem[] = [
 
 const SIMPLE_LINKS = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "Developers", href: "#" },
+  { label: "Developers", href: "#developers" },
   { label: "Pricing", href: "#" },
-  { label: "Resources", href: "#" },
+  { label: "Resources", href: "#faq" },
 ];
 
 function Logo() {
