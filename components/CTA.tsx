@@ -19,17 +19,18 @@ export default function CTA() {
             />
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
-                Placeholder closing headline
+                One layer for identity and compliance. Built to be reused.
               </h2>
-              <p className="mx-auto mt-4 max-w-md text-body-lg-mobile text-text-muted md:text-body-lg">
-                Placeholder supporting line. Replace with final copy.
+              <p className="mx-auto mt-4 max-w-lg text-body-lg-mobile text-text-muted md:text-body-lg">
+                Verify users once, screen them continuously, and prove it all on
+                demand.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button href="#" variant="filled" size="lg" className="w-full sm:w-auto">
-                  Get started
+                  Request access
                 </Button>
                 <Button href="#" variant="outline" size="lg" className="w-full sm:w-auto">
-                  Talk to sales
+                  Talk to us
                 </Button>
               </div>
             </div>
