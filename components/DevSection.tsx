@@ -18,8 +18,16 @@ const FEATURES: Feature[] = [
     description:
       "Risk does not end at sign-up. Fortgate AML watches for changes in status and behavior across the full lifecycle.",
   },
-  { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
-  { title: "Placeholder feature", description: "Short description of this developer-facing feature." },
+  {
+    title: "Score, flag, act",
+    description:
+      "Every profile carries a live risk score. Analysts get prioritized alerts instead of noise, so teams act on what matters.",
+  },
+  {
+    title: "One record, ready for audit",
+    description:
+      "Identity and AML share a single, tamper-evident trail — every check, score, and decision provable on demand.",
+  },
 ];
 
 function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
