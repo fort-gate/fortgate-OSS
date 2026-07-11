@@ -8,10 +8,10 @@ interface FooterColumn {
 }
 
 const COLUMNS: FooterColumn[] = [
-  { heading: "Product", links: ["Placeholder", "Placeholder", "Placeholder", "Placeholder"] },
-  { heading: "Solutions", links: ["Placeholder", "Placeholder", "Placeholder"] },
-  { heading: "Developers", links: ["Documentation", "API Reference", "Changelog", "Status"] },
-  { heading: "Resources", links: ["Placeholder", "Placeholder", "Placeholder"] },
+  { heading: "Products", links: ["Fortgate ID", "Fortgate AML", "How it works", "Pricing"] },
+  { heading: "Solutions", links: ["Reusable identity", "Continuous AML", "Audit readiness"] },
+  { heading: "Developers", links: ["Documentation", "API reference", "Status"] },
+  { heading: "Resources", links: ["About", "Contact", "Privacy", "Terms"] },
 ];
 
 type SocialName = "x" | "github" | "linkedin";
