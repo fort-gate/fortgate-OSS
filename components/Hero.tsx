@@ -35,10 +35,10 @@ export default function Hero() {
               style={{ animationDelay: "0.16s" }}
             >
               <Button href="#" variant="filled" size="md" className="w-full sm:w-auto">
-                Start building
+                Request access
               </Button>
-              <Button href="#" variant="outline" size="md" className="w-full sm:w-auto">
-                Explore the platform
+              <Button href="#how-it-works" variant="outline" size="md" className="w-full sm:w-auto">
+                See how it works
               </Button>
             </div>
           </div>
