@@ -29,6 +29,15 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-satoshi)", "system-ui", "sans-serif"],
+        // Monospace for data/code/proof hashes — signals infra seriousness.
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace",
+        ],
       },
       // Typographic scale from the validated design tokens.
       fontSize: {
