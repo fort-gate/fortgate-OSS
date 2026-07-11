@@ -15,14 +15,14 @@ export default function Hero() {
           {/* Left: copy */}
           <div className="relative z-10 max-w-xl">
             <h1
-              className="text-h1-mobile font-bold tracking-tight text-text-primary md:text-h1 animate-fade-rise"
+              className="text-h1-mobile font-bold leading-[1.05] tracking-tight text-text-primary md:text-h1 animate-fade-rise"
               style={{ animationDelay: "0s" }}
             >
               Verify once. Prove compliance everywhere.
             </h1>
 
             <p
-              className="mt-6 max-w-lg text-body-lg-mobile text-text-muted md:text-body-lg animate-fade-rise"
+              className="mt-6 max-w-lg text-body-lg-mobile text-text-secondary md:text-body-lg animate-fade-rise"
               style={{ animationDelay: "0.08s" }}
             >
               Fortgate is the integrated identity and compliance layer for
