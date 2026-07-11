@@ -1,12 +1,44 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { satoshi } from "./fonts";
 import LenisProvider from "@/components/LenisProvider";
 import "./globals.css";
 
+const description =
+  "Verify a user once, then let that verified identity travel securely across every product — reusable, privacy-preserving, and audit-ready. Fortgate ID for reusable verification, Fortgate AML for continuous screening.";
+
 export const metadata: Metadata = {
-  title: "Fortgate — The integrated identity and compliance layer",
-  description:
-    "Verify a user once, then let that verified identity travel securely across every product — reusable, privacy-preserving, and audit-ready. Fortgate ID for reusable verification, Fortgate AML for continuous screening.",
+  title: {
+    default: "Fortgate — The integrated identity and compliance layer",
+    template: "%s · Fortgate",
+  },
+  description,
+  applicationName: "Fortgate",
+  keywords: [
+    "identity verification",
+    "reusable identity",
+    "AML",
+    "compliance",
+    "zero-knowledge proofs",
+    "KYC",
+    "watchlist screening",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "Fortgate",
+    title: "Fortgate — The integrated identity and compliance layer",
+    description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fortgate — The integrated identity and compliance layer",
+    description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0f",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
