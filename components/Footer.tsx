@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="mt-8 flex flex-col gap-3 text-label text-text-muted sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Placeholder, Inc. All rights reserved.</p>
+            <p>© 2026 Fortgate. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="transition-colors hover:text-text-primary">Privacy</a>
               <a href="#" className="transition-colors hover:text-text-primary">Terms</a>
