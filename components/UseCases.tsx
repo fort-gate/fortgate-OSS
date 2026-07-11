@@ -29,16 +29,21 @@ function CardVisual() {
 
 export default function UseCases() {
   return (
-    <Section id="use-cases">
+    <Section id="fortgate-id">
       <Container>
         <Reveal>
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-label uppercase tracking-wider text-accent-violet">
-              Placeholder eyebrow
+              Fortgate ID
             </p>
             <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
-              Placeholder section heading for use cases
+              One verification, reusable across every platform
             </h2>
+            <p className="mt-5 text-body-lg-mobile text-text-muted md:text-body-lg">
+              Fortgate ID turns a completed identity check into a reusable,
+              privacy-preserving proof. It ends repeated verification and lets
+              platforms trust each other — here is what it does and how.
+            </p>
           </div>
         </Reveal>
 
