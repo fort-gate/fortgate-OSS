@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import logoWordmark from "@/public/brand/logo-wordmark.png";
 
 interface MenuLink {
   label: string;
@@ -84,13 +86,13 @@ const SIMPLE_LINKS = [
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-2" aria-label="Home">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent-violet">
-        <span className="h-3 w-3 rounded-sm bg-text-primary" />
-      </span>
-      <span className="text-label font-bold tracking-tight text-text-primary">
-        Placeholder
-      </span>
+    <a href="#" className="flex items-center" aria-label="Fortgate — home">
+      <Image
+        src={logoWordmark}
+        alt="Fortgate"
+        priority
+        className="h-7 w-auto md:h-8"
+      />
     </a>
   );
 }

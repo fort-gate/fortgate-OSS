@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Container from "@/components/ui/Container";
+import logoWordmark from "@/public/brand/logo-wordmark.png";
 
 interface FooterColumn {
   heading: string;
@@ -50,10 +52,10 @@ export default function Footer() {
 
           {/* Tagline row */}
           <div className="mt-14 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent-violet">
-                <span className="h-3 w-3 rounded-sm bg-text-primary" />
-              </span>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="#" aria-label="Fortgate — home" className="w-fit">
+                <Image src={logoWordmark} alt="Fortgate" className="h-7 w-auto" />
+              </a>
               <span className="text-body-lg-mobile text-text-muted md:text-body-lg">
                 Placeholder tagline goes here.
               </span>
