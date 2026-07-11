@@ -1,53 +1,58 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
+import Icon, { type IconName } from "@/components/ui/Icon";
 
 interface UseCase {
+  icon: IconName;
   title: string;
   description: string;
 }
 
-// Placeholder use cases — replace copy and swap the visual for real assets.
 const USE_CASES: UseCase[] = [
   {
+    icon: "refresh",
     title: "Verify once, reuse forever",
     description:
       "A completed verification becomes a portable proof. Users skip the process on every new platform that trusts Fortgate.",
   },
   {
+    icon: "eye-off",
     title: "Prove without exposing",
     description:
       "A zero-knowledge proof confirms a user is verified and cleared — without revealing the underlying documents or personal data.",
   },
   {
+    icon: "fingerprint",
     title: "Identity you can trust",
     description:
       "Biometrics, digital signature, and document capture bind the proof to a real, present person — not a stolen file.",
   },
   {
+    icon: "list-check",
     title: "Cleared at the source",
     description:
       "Every identity is screened against sanctions, PEP, and watchlists before a proof is ever issued.",
   },
   {
+    icon: "network",
     title: "Trust that travels",
     description:
       "Any connected platform can validate a proof independently, enabling institutions to rely on each other's verifications.",
   },
   {
+    icon: "file-check",
     title: "Provable on demand",
     description:
       "Each proof is anchored on-chain, giving compliance teams a tamper-evident, verifiable record for any audit.",
   },
 ];
 
-function CardVisual() {
+function IconChip({ name }: { name: IconName }) {
   return (
-    <div className="mb-5 aspect-[16/10] w-full rounded-[14px] border border-border bg-gradient-to-br from-accent-violet/20 to-accent-blue/10">
-      <div className="grid h-full place-items-center">
-        <span className="text-label text-text-muted">Visual placeholder</span>
-      </div>
-    </div>
+    <span className="mb-5 grid h-11 w-11 place-items-center rounded-[12px] border border-hairline bg-accent-violet/10 text-accent-violet">
+      <Icon name={name} size={22} />
+    </span>
   );
 }
 
@@ -75,8 +80,8 @@ export default function UseCases() {
         <div className="grid grid-cols-1 gap-grid sm:grid-cols-2 lg:grid-cols-3">
           {USE_CASES.map((item, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <article className="h-full rounded-card border border-border bg-card-surface p-card transition-transform duration-[0.6s] ease-smooth hover:-translate-y-1">
-                <CardVisual />
+              <article className="h-full rounded-card border border-border bg-surface-1 p-card transition-colors duration-300 ease-smooth hover:border-hairline">
+                <IconChip name={item.icon} />
                 <h3 className="text-body-lg font-bold text-text-primary">
                   {item.title}
                 </h3>
