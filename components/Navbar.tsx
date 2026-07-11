@@ -23,56 +23,24 @@ interface NavItem {
   columns: MenuColumn[];
 }
 
-// Placeholder navigation — swap labels/links for final IA.
+// Products is the only mega-menu; the rest are simple links (spec IA order).
 const NAV_ITEMS: NavItem[] = [
   {
-    label: "Product",
+    label: "Products",
     columns: [
       {
-        heading: "Platform",
+        heading: "Products",
         links: [
-          { label: "Placeholder Feature", description: "One-line description placeholder.", href: "#" },
-          { label: "Placeholder Feature", description: "One-line description placeholder.", href: "#" },
-          { label: "Placeholder Feature", description: "One-line description placeholder.", href: "#" },
-        ],
-      },
-      {
-        heading: "Capabilities",
-        links: [
-          { label: "Placeholder Feature", description: "One-line description placeholder.", href: "#" },
-          { label: "Placeholder Feature", description: "One-line description placeholder.", href: "#" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Solutions",
-    columns: [
-      {
-        heading: "By team",
-        links: [
-          { label: "Placeholder Solution", description: "One-line description placeholder.", href: "#" },
-          { label: "Placeholder Solution", description: "One-line description placeholder.", href: "#" },
-        ],
-      },
-      {
-        heading: "By industry",
-        links: [
-          { label: "Placeholder Solution", description: "One-line description placeholder.", href: "#" },
-          { label: "Placeholder Solution", description: "One-line description placeholder.", href: "#" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Developers",
-    columns: [
-      {
-        heading: "Build",
-        links: [
-          { label: "Documentation", description: "One-line description placeholder.", href: "#" },
-          { label: "API Reference", description: "One-line description placeholder.", href: "#" },
-          { label: "Changelog", description: "One-line description placeholder.", href: "#" },
+          {
+            label: "Fortgate ID",
+            description: "Reusable, privacy-preserving identity verification.",
+            href: "#fortgate-id",
+          },
+          {
+            label: "Fortgate AML",
+            description: "Continuous screening and monitoring after onboarding.",
+            href: "#fortgate-aml",
+          },
         ],
       },
     ],
@@ -80,6 +48,8 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const SIMPLE_LINKS = [
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Developers", href: "#" },
   { label: "Pricing", href: "#" },
   { label: "Resources", href: "#" },
 ];
@@ -99,7 +69,10 @@ function Logo() {
 
 function MegaMenu({ columns }: { columns: MenuColumn[] }) {
   return (
-    <div className="grid gap-8 sm:grid-cols-2" style={{ minWidth: 420 }}>
+    <div
+      className={`grid gap-8 ${columns.length > 1 ? "sm:grid-cols-2" : ""}`}
+      style={{ minWidth: columns.length > 1 ? 420 : 280 }}
+    >
       {columns.map((col) => (
         <div key={col.heading}>
           <p className="mb-3 text-label font-medium uppercase tracking-wider text-text-muted">
