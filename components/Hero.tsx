@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import HeroVisual from "@/components/HeroVisual";
 
 /**
  * Hero — left-aligned copy column with a filled + outline CTA, paired with a
@@ -43,36 +44,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: glass panel with glowing orb */}
+          {/* Right: product diagram — verify once, reuse everywhere */}
           <div
             className="relative flex items-center justify-center animate-fade-rise"
             style={{ animationDelay: "0.24s" }}
           >
-            {/* Ambient glow behind the panel — soft, even, violet-tinted */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute h-[112%] w-[112%] rounded-full bg-accent-violet/[0.09] blur-[100px]"
-            />
-
-            <div className="relative aspect-square w-full max-w-[440px]">
-              {/* Frosted glass panel — uniformly lighter than background */}
-              <div className="absolute inset-0 overflow-hidden rounded-[32px] border border-text-primary/10 bg-gradient-to-br from-text-primary/[0.22] via-text-primary/[0.15] to-text-primary/[0.11] shadow-[0_20px_70px_-30px] shadow-accent-violet/20 backdrop-blur-xl">
-                {/* Inner top-left highlight */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 bg-gradient-to-br from-text-primary/[0.06] to-transparent"
-                />
-
-                {/* Glowing orb — stacked blurred accent layers, white core */}
-                <div className="absolute inset-0 grid place-items-center">
-                  <span className="absolute h-4/5 w-4/5 rounded-full bg-accent-violet/25 blur-[70px]" />
-                  <span className="absolute h-44 w-44 rounded-full bg-accent-violet/45 blur-[50px]" />
-                  <span className="absolute h-24 w-24 rounded-full bg-accent-violet/70 blur-[28px]" />
-                  <span className="absolute h-10 w-10 rounded-full bg-accent-violet blur-[12px]" />
-                  <span className="relative h-4 w-4 rounded-full bg-text-primary shadow-[0_0_20px] shadow-text-primary/80" />
-                </div>
-              </div>
-            </div>
+            <HeroVisual />
           </div>
         </div>
       </Container>
