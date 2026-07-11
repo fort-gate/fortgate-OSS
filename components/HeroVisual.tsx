@@ -2,17 +2,15 @@ import Icon from "@/components/ui/Icon";
 
 function PlatformNode({ label }: { label: string }) {
   return (
-    <div className="min-w-0 rounded-[12px] border border-border bg-surface-3 p-3">
-      <div className="flex min-w-0 items-center gap-2">
-        <Icon name="building" size={16} className="shrink-0 text-text-muted" />
-        <span className="truncate text-label font-medium text-text-primary">
-          {label}
-        </span>
-      </div>
-      <div className="mt-2 flex items-start gap-1 text-label text-accent-violet">
-        <Icon name="check" size={13} className="mt-0.5 shrink-0" />
+    <div className="min-w-0 rounded-[12px] border border-border bg-surface-3 p-3 text-center">
+      <Icon name="building" size={16} className="mx-auto text-text-muted" />
+      <span className="mt-1.5 block truncate text-label font-medium text-text-primary">
+        {label}
+      </span>
+      <span className="mt-1 inline-flex items-center gap-1 text-label text-accent-violet">
+        <Icon name="check" size={12} className="shrink-0" />
         <span className="text-text-muted">Reused</span>
-      </div>
+      </span>
     </div>
   );
 }
