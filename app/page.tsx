@@ -5,6 +5,8 @@ import UseCases from "@/components/UseCases";
 import Stats from "@/components/Stats";
 import CaseStudies from "@/components/CaseStudies";
 import DevSection from "@/components/DevSection";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
         <Stats />
         <CaseStudies />
         <DevSection />
+        <CTA />
       </main>
+      <Footer />
     </>
   );
 }

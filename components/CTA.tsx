@@ -1,0 +1,41 @@
+import Container from "@/components/ui/Container";
+import Section from "@/components/ui/Section";
+import Button from "@/components/ui/Button";
+import Reveal from "@/components/ui/Reveal";
+
+/**
+ * Full-width closing CTA over a subtle violet→blue gradient wash.
+ */
+export default function CTA() {
+  return (
+    <Section id="cta">
+      <Container>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-card border border-border px-6 py-16 text-center md:px-12 md:py-24">
+            {/* Subtle gradient background */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-violet/20 via-background to-accent-blue/15"
+            />
+            <div className="relative mx-auto max-w-2xl">
+              <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
+                Placeholder closing headline
+              </h2>
+              <p className="mx-auto mt-4 max-w-md text-body-lg-mobile text-text-muted md:text-body-lg">
+                Placeholder supporting line. Replace with final copy.
+              </p>
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button href="#" variant="filled" size="lg" className="w-full sm:w-auto">
+                  Get started
+                </Button>
+                <Button href="#" variant="outline" size="lg" className="w-full sm:w-auto">
+                  Talk to sales
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </Container>
+    </Section>
+  );
+}
