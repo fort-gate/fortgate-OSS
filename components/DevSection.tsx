@@ -1,40 +1,46 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
+import Icon, { type IconName } from "@/components/ui/Icon";
 
 interface Feature {
+  icon: IconName;
   title: string;
   description: string;
 }
 
 const FEATURES: Feature[] = [
   {
+    icon: "radar",
     title: "Screen in real time",
     description:
       "Continuously match identities against sanctions, PEP, and watchlists — updated as the lists change, not once a year.",
   },
   {
+    icon: "activity",
     title: "Monitor after onboarding",
     description:
       "Risk does not end at sign-up. Fortgate AML watches for changes in status and behavior across the full lifecycle.",
   },
   {
+    icon: "gauge",
     title: "Score, flag, act",
     description:
       "Every profile carries a live risk score. Analysts get prioritized alerts instead of noise, so teams act on what matters.",
   },
   {
+    icon: "file-check",
     title: "One record, ready for audit",
     description:
       "Identity and AML share a single, tamper-evident trail — every check, score, and decision provable on demand.",
   },
 ];
 
-function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
+function FeatureBlock({ feature }: { feature: Feature }) {
   return (
     <div className="flex gap-4 border-t border-border pt-6">
-      <span className="text-label font-bold text-accent-violet">
-        {String(index + 1).padStart(2, "0")}
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] border border-hairline bg-accent-violet/10 text-accent-violet">
+        <Icon name={feature.icon} size={20} />
       </span>
       <div>
         <h3 className="text-body-lg font-bold text-text-primary">
@@ -138,8 +144,8 @@ export default function DevSection() {
                 screening and monitoring share one source of truth.
               </p>
               <div className="space-y-6">
-                {FEATURES.map((feature, i) => (
-                  <FeatureBlock key={i} feature={feature} index={i} />
+                {FEATURES.map((feature) => (
+                  <FeatureBlock key={feature.title} feature={feature} />
                 ))}
               </div>
             </div>
