@@ -11,10 +11,15 @@ const config: Config = {
         "accent-violet": "rgb(var(--color-accent-violet-rgb) / <alpha-value>)",
         "accent-blue": "rgb(var(--color-accent-blue-rgb) / <alpha-value>)",
         "text-primary": "rgb(var(--color-text-primary-rgb) / <alpha-value>)",
+        "text-secondary": "rgb(var(--color-text-secondary-rgb) / <alpha-value>)",
         "text-muted": "rgb(var(--color-text-muted-rgb) / <alpha-value>)",
+        "surface-1": "rgb(var(--color-surface-1-rgb) / <alpha-value>)",
+        "surface-2": "rgb(var(--color-surface-2-rgb) / <alpha-value>)",
+        "surface-3": "rgb(var(--color-surface-3-rgb) / <alpha-value>)",
         // These already carry their own alpha; used at full strength.
         "card-surface": "var(--color-card-surface)",
         border: "var(--color-border)",
+        hairline: "var(--color-hairline)",
       },
       borderRadius: {
         card: "var(--radius-card)",

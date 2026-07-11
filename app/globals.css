@@ -11,6 +11,15 @@
   --color-card-surface: rgba(255, 255, 255, 0.045);
   --color-border: rgba(255, 255, 255, 0.08);
 
+  /* Elevation scale — opaque neutral surfaces for depth/section rhythm. */
+  --color-surface-1: #0d0d13;
+  --color-surface-2: #121219;
+  --color-surface-3: #17171f;
+  /* Higher-contrast body text than --color-text-muted (for dense copy). */
+  --color-text-secondary: #c7cad4;
+  /* Hairline separators, stronger than --color-border where needed. */
+  --color-hairline: rgba(255, 255, 255, 0.12);
+
   /* RGB channel companions of the tokens above — same values, space-separated
      so Tailwind can inject <alpha-value> (enables /opacity modifiers). */
   --color-background-rgb: 10 10 15;
@@ -18,6 +27,10 @@
   --color-accent-blue-rgb: 59 130 246;
   --color-text-primary-rgb: 255 255 255;
   --color-text-muted-rgb: 156 163 175;
+  --color-text-secondary-rgb: 199 202 212;
+  --color-surface-1-rgb: 13 13 19;
+  --color-surface-2-rgb: 18 18 25;
+  --color-surface-3-rgb: 23 23 31;
 
   --radius-card: 20px;
   --max-width: 1200px;
