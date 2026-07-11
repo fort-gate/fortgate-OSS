@@ -35,18 +35,24 @@ function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
 
 export default function DevSection() {
   return (
-    <Section id="developers">
+    <Section id="fortgate-aml">
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: feature list */}
           <Reveal>
             <div>
               <p className="mb-3 text-label uppercase tracking-wider text-accent-violet">
-                For developers
+                Fortgate AML
               </p>
-              <h2 className="mb-8 text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
-                Placeholder developer section heading
+              <h2 className="mb-5 text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
+                Compliance that never stops watching
               </h2>
+              <p className="mb-8 text-body-lg-mobile text-text-muted md:text-body-lg">
+                Fortgate AML extends the same engine from onboarding into
+                ongoing protection. It catches risk continuously — not just at
+                sign-up — and works on the identity you already verified, so
+                screening and monitoring share one source of truth.
+              </p>
               <div className="space-y-6">
                 {FEATURES.map((feature, i) => (
                   <FeatureBlock key={i} feature={feature} index={i} />
