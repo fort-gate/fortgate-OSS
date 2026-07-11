@@ -48,6 +48,9 @@ const USE_CASES: UseCase[] = [
   },
 ];
 
+// Indices rendered two columns wide on desktop for a bento rhythm.
+const WIDE_TILES = new Set([0, 3, 4]);
+
 function IconChip({ name }: { name: IconName }) {
   return (
     <span className="mb-5 grid h-11 w-11 place-items-center rounded-[12px] border border-hairline bg-accent-violet/10 text-accent-violet">
@@ -76,11 +79,16 @@ export default function UseCases() {
           </div>
         </Reveal>
 
-        {/* Bento: 1 col mobile / 2 tablet / 3 desktop, 24px gap */}
+        {/* Bento: 1 col mobile / 2 tablet / 3 desktop. Wide tiles at 0,3,4
+            create an alternating left/right rhythm that tiles perfectly (9 cells). */}
         <div className="grid grid-cols-1 gap-grid sm:grid-cols-2 lg:grid-cols-3">
           {USE_CASES.map((item, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <article className="h-full rounded-card border border-border bg-surface-1 p-card transition-colors duration-300 ease-smooth hover:border-hairline">
+            <Reveal
+              key={i}
+              delay={i * 0.1}
+              className={WIDE_TILES.has(i) ? "lg:col-span-2" : undefined}
+            >
+              <article className="flex h-full flex-col rounded-card border border-border bg-surface-1 p-card transition-colors duration-300 ease-smooth hover:border-hairline">
                 <IconChip name={item.icon} />
                 <h3 className="text-body-lg font-bold text-text-primary">
                   {item.title}
