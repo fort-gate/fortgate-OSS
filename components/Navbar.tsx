@@ -172,7 +172,13 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop actions */}
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex">
+            <a
+              href="#contact"
+              className="rounded-full px-3 py-2 text-label text-text-muted transition-colors duration-200 ease-smooth hover:text-text-primary"
+            >
+              Book a call
+            </a>
             <Button href="#" variant="outline" size="md">
               Log in
             </Button>
@@ -264,12 +270,18 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="flex flex-col gap-3 pt-4">
-                  <Button href="#" variant="outline" size="lg" className="w-full">
-                    Log in
+                  <Button href="#contact" variant="outline" size="lg" className="w-full">
+                    Book a call
                   </Button>
                   <Button href="#" variant="filled" size="lg" className="w-full">
                     Request access
                   </Button>
+                  <a
+                    href="#"
+                    className="py-1 text-center text-label text-text-muted transition-colors hover:text-text-primary"
+                  >
+                    Log in
+                  </a>
                 </div>
               </div>
             </Container>
