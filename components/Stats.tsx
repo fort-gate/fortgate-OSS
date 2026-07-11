@@ -1,57 +1,45 @@
-"use client";
-
-import CountUp from "react-countup";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Reveal from "@/components/ui/Reveal";
+import Icon, { type IconName } from "@/components/ui/Icon";
 
-interface Stat {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
+interface Principle {
+  icon: IconName;
+  value: string;
   label: string;
 }
 
-// Pre-launch: capability-framed metrics, not traction numbers (none exist yet).
-const STATS: Stat[] = [
-  { value: 1, suffix: "×", label: "Verify once, reuse across every connected platform" },
-  { value: 5, prefix: "<", suffix: "s", label: "Proof generation, not days of manual review" },
-  { value: 0, label: "Personal data exposed when a proof is validated" },
-  { value: 100, suffix: "%", label: "Verifiable audit trail, anchored on-chain" },
+// Pre-launch: framed as operating principles, not traction. Static values —
+// animating "0" or "1x" would read as a gimmick to a compliance buyer.
+const PRINCIPLES: Principle[] = [
+  { icon: "refresh", value: "1×", label: "Verify once, reuse across every connected platform" },
+  { icon: "activity", value: "<5s", label: "Proof generation, not days of manual review" },
+  { icon: "eye-off", value: "0", label: "Personal data exposed when a proof is validated" },
+  { icon: "file-check", value: "100%", label: "Verifiable audit trail, anchored on-chain" },
 ];
-
-function StatItem({ stat }: { stat: Stat }) {
-  return (
-    <div className="text-center">
-      <div className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
-        {stat.prefix}
-        <CountUp
-          end={stat.value}
-          decimals={stat.decimals ?? 0}
-          duration={2}
-          enableScrollSpy
-          scrollSpyOnce
-        />
-        {stat.suffix}
-      </div>
-      <p className="mt-2 text-label text-text-muted">{stat.label}</p>
-    </div>
-  );
-}
 
 export default function Stats() {
   return (
-    <Section id="stats">
+    <Section id="principles">
       <Container>
-        {/* 2 col mobile / 4 col desktop, 24px gap */}
-        <div className="grid grid-cols-2 gap-grid lg:grid-cols-4">
-          {STATS.map((stat, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <StatItem stat={stat} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="overflow-hidden rounded-card border border-border bg-surface-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              {PRINCIPLES.map((p) => (
+                <div
+                  key={p.label}
+                  className="border-b border-border p-6 last:border-b-0 sm:[&:nth-child(-n+2)]:border-b sm:[&:nth-last-child(-n+2)]:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0"
+                >
+                  <Icon name={p.icon} size={22} className="text-accent-violet" />
+                  <div className="mt-4 text-h2-mobile font-bold tracking-tight text-text-primary">
+                    {p.value}
+                  </div>
+                  <p className="mt-2 text-label text-text-muted">{p.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );
