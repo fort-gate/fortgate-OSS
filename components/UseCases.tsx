@@ -19,8 +19,16 @@ const USE_CASES: UseCase[] = [
     description:
       "A zero-knowledge proof confirms a user is verified and cleared — without revealing the underlying documents or personal data.",
   },
-  { title: "Placeholder use case", description: "One line describing this use case." },
-  { title: "Placeholder use case", description: "One line describing this use case." },
+  {
+    title: "Identity you can trust",
+    description:
+      "Biometrics, digital signature, and document capture bind the proof to a real, present person — not a stolen file.",
+  },
+  {
+    title: "Cleared at the source",
+    description:
+      "Every identity is screened against sanctions, PEP, and watchlists before a proof is ever issued.",
+  },
   { title: "Placeholder use case", description: "One line describing this use case." },
   { title: "Placeholder use case", description: "One line describing this use case." },
 ];
