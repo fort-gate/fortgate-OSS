@@ -10,7 +10,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"a"> {
 }
 
 const base =
-  "inline-flex items-center justify-center rounded-full font-medium text-label whitespace-nowrap transition-all duration-[0.6s] ease-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-violet focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "inline-flex items-center justify-center rounded-full font-medium text-label whitespace-nowrap transition-all duration-300 ease-smooth";
 
 const sizes: Record<ButtonSize, string> = {
   md: "h-10 px-5",

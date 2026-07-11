@@ -105,6 +105,14 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Unified keyboard focus ring. :where() keeps specificity 0 so components
+     can still opt out, but every interactive element is covered by default. */
+  :where(a, button, [role="button"], summary, input, textarea, select):focus-visible {
+    outline: 2px solid rgb(var(--color-accent-violet-rgb));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-text-primary);
