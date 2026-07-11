@@ -63,65 +63,15 @@
   }
 }
 
-@keyframes neon-pulse {
-  0%,
-  100% {
-    text-shadow:
-      0 0 4px rgba(139, 92, 246, 0.95),
-      0 0 12px rgba(139, 92, 246, 0.75),
-      0 0 28px rgba(59, 130, 246, 0.55),
-      0 0 56px rgba(139, 92, 246, 0.35);
-  }
-  50% {
-    text-shadow:
-      0 0 6px rgba(167, 139, 250, 1),
-      0 0 18px rgba(139, 92, 246, 0.9),
-      0 0 36px rgba(59, 130, 246, 0.7),
-      0 0 72px rgba(96, 165, 250, 0.45);
-  }
-}
-
 @layer utilities {
-  .neon-marquee-text {
-    color: #ede9fe;
-    text-shadow:
-      0 0 4px rgba(139, 92, 246, 0.95),
-      0 0 12px rgba(139, 92, 246, 0.75),
-      0 0 28px rgba(59, 130, 246, 0.55),
-      0 0 56px rgba(139, 92, 246, 0.35);
-    animation: neon-pulse 3.5s ease-in-out infinite;
-  }
-
-  .neon-marquee-dot {
-    color: #a78bfa;
-    text-shadow:
-      0 0 6px rgba(167, 139, 250, 0.95),
-      0 0 16px rgba(139, 92, 246, 0.7);
-  }
-
   .marquee-track {
-    animation: marquee 28s linear infinite;
+    animation: marquee 40s linear infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .marquee-track {
       animation: none;
     }
-
-    .neon-marquee-text {
-      animation: none;
-    }
-  }
-}
-
-@keyframes fade-rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

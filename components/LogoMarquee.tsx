@@ -1,44 +1,44 @@
+import Icon from "@/components/ui/Icon";
+
+// Pre-launch: no partner logos. A quiet capability bar states the posture
+// instead of showing fake traction. Muted, no glow — calm and credible.
 const CAPABILITIES = [
   "Built on zero-knowledge proofs",
   "Portable identity",
   "Audit-ready by design",
+  "Data never leaves your control",
 ];
 
-function MarqueeTrack() {
+function Track() {
   return (
-    <div className="flex shrink-0 items-center gap-x-10 pr-10">
-      {CAPABILITIES.map((item, i) => (
-        <span key={item} className="inline-flex items-center gap-x-10">
-          {i > 0 && (
-            <span aria-hidden className="neon-marquee-dot text-label">
-              ·
-            </span>
-          )}
-          <span className="neon-marquee-text text-label uppercase tracking-[0.18em]">
-            {item}
-          </span>
+    <div className="flex shrink-0 items-center">
+      {CAPABILITIES.map((item) => (
+        <span
+          key={item}
+          className="mx-6 inline-flex items-center gap-2 text-label uppercase tracking-[0.16em] text-text-muted"
+        >
+          <Icon name="check" size={14} className="text-accent-violet/70" />
+          {item}
         </span>
       ))}
-      <span aria-hidden className="neon-marquee-dot text-label">
-        ·
-      </span>
     </div>
   );
 }
 
 /**
- * Capability strip — infinite horizontal marquee with neon typography.
+ * Capability strip — a slow, glow-free marquee. Quiet by design; the seriousness
+ * of a regulated product is communicated by restraint, not neon.
  */
 export default function LogoMarquee() {
   return (
     <section
       aria-label="Fortgate capabilities"
-      className="overflow-hidden border-y border-border py-8"
+      className="overflow-hidden border-y border-border bg-surface-1 py-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
     >
       <div className="flex w-max marquee-track">
-        <MarqueeTrack />
+        <Track />
         <div aria-hidden>
-          <MarqueeTrack />
+          <Track />
         </div>
       </div>
     </section>
