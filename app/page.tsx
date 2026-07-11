@@ -1,7 +1,15 @@
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import LogoMarquee from "@/components/LogoMarquee";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-body-lg text-text-muted">Placeholder — building sections.</p>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <LogoMarquee />
+      </main>
+    </>
   );
 }
