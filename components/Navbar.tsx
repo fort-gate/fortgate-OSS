@@ -166,7 +166,7 @@ export default function Navbar() {
               Log in
             </Button>
             <Button href="#" variant="filled" size="md">
-              Get started
+              Request access
             </Button>
           </div>
 
@@ -257,7 +257,7 @@ export default function Navbar() {
                     Log in
                   </Button>
                   <Button href="#" variant="filled" size="lg" className="w-full">
-                    Get started
+                    Request access
                   </Button>
                 </div>
               </div>
