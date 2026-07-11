@@ -5,12 +5,14 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Icon, { type IconName } from "@/components/ui/Icon";
 import logoWordmark from "@/public/brand/logo-wordmark.png";
 
 interface MenuLink {
   label: string;
   description: string;
   href: string;
+  icon?: IconName;
 }
 
 interface MenuColumn {
@@ -35,11 +37,13 @@ const NAV_ITEMS: NavItem[] = [
             label: "Fortgate ID",
             description: "Reusable, privacy-preserving identity verification.",
             href: "#fortgate-id",
+            icon: "shield-check",
           },
           {
             label: "Fortgate AML",
             description: "Continuous screening and monitoring after onboarding.",
             href: "#fortgate-aml",
+            icon: "radar",
           },
         ],
       },
@@ -78,18 +82,25 @@ function MegaMenu({ columns }: { columns: MenuColumn[] }) {
           <p className="mb-3 text-label font-medium uppercase tracking-wider text-text-muted">
             {col.heading}
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-1">
             {col.links.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="block rounded-lg p-2 transition-colors duration-200 ease-smooth hover:bg-card-surface"
+                  className="flex items-start gap-3 rounded-lg p-2.5 transition-colors duration-200 ease-smooth hover:bg-card-surface focus-visible:bg-card-surface focus-visible:outline-none"
                 >
-                  <span className="block text-label font-medium text-text-primary">
-                    {link.label}
-                  </span>
-                  <span className="block text-label text-text-muted">
-                    {link.description}
+                  {link.icon && (
+                    <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-hairline bg-accent-violet/10 text-accent-violet">
+                      <Icon name={link.icon} size={17} />
+                    </span>
+                  )}
+                  <span className="block">
+                    <span className="block text-label font-medium text-text-primary">
+                      {link.label}
+                    </span>
+                    <span className="block text-label text-text-muted">
+                      {link.description}
+                    </span>
                   </span>
                 </a>
               </li>
