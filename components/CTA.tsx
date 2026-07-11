@@ -11,11 +11,11 @@ export default function CTA() {
     <Section id="cta">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-card border border-border px-6 py-16 text-center md:px-12 md:py-24">
-            {/* Subtle gradient background */}
+          <div className="relative overflow-hidden rounded-card border border-border bg-surface-1 px-6 py-16 text-center md:px-12 md:py-24">
+            {/* Restrained accent — a soft glow at the top edge, not a full wash */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent-violet/20 via-background to-accent-blue/15"
+              className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(60%_100%_at_50%_0%,rgb(var(--color-accent-violet-rgb)/0.16),transparent)]"
             />
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-h2-mobile font-bold tracking-tight text-text-primary md:text-h2">
