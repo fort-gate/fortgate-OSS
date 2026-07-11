@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface RevealProps {
@@ -29,6 +29,13 @@ const variants: Variants = {
  * siblings (bento cards use index * 0.1).
  */
 export default function Reveal({ children, delay = 0, className }: RevealProps) {
+  const reduceMotion = useReducedMotion();
+
+  // Reduced-motion users get the content immediately, no transform/fade.
+  if (reduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
