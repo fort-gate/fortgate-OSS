@@ -29,8 +29,16 @@ const USE_CASES: UseCase[] = [
     description:
       "Every identity is screened against sanctions, PEP, and watchlists before a proof is ever issued.",
   },
-  { title: "Placeholder use case", description: "One line describing this use case." },
-  { title: "Placeholder use case", description: "One line describing this use case." },
+  {
+    title: "Trust that travels",
+    description:
+      "Any connected platform can validate a proof independently, enabling institutions to rely on each other's verifications.",
+  },
+  {
+    title: "Provable on demand",
+    description:
+      "Each proof is anchored on-chain, giving compliance teams a tamper-evident, verifiable record for any audit.",
+  },
 ];
 
 function CardVisual() {
