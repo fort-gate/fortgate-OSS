@@ -48,6 +48,75 @@ function FeatureBlock({ feature, index }: { feature: Feature; index: number }) {
   );
 }
 
+// Placeholder alert feed for the product mock — illustrative only.
+const ALERTS: { level: "high" | "med" | "low"; title: string; meta: string }[] = [
+  { level: "high", title: "Watchlist match — new sanctions entry", meta: "2m ago · score +38" },
+  { level: "med", title: "Behavior change flagged for review", meta: "17m ago · score +12" },
+  { level: "low", title: "PEP status refreshed — no change", meta: "1h ago · cleared" },
+];
+
+const LEVEL_DOT: Record<"high" | "med" | "low", string> = {
+  high: "bg-accent-violet",
+  med: "bg-accent-blue",
+  low: "bg-text-muted",
+};
+
+/** Illustrative dashboard: a live risk score and a prioritized alert feed. */
+function RiskDashboardMock() {
+  return (
+    <div className="rounded-card border border-border bg-card-surface p-2">
+      <div className="rounded-[14px] bg-gradient-to-br from-accent-violet/10 to-accent-blue/5 p-5">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <span className="text-label font-medium text-text-primary">
+            Risk overview
+          </span>
+          <span className="inline-flex items-center gap-2 text-label text-text-muted">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-violet" />
+            Live
+          </span>
+        </div>
+
+        {/* Risk score */}
+        <div className="mt-5 rounded-[12px] border border-border bg-background/40 p-4">
+          <div className="flex items-end justify-between">
+            <div>
+              <div className="text-h2-mobile font-bold leading-none text-text-primary">
+                72<span className="text-body-lg text-text-muted">/100</span>
+              </div>
+              <p className="mt-1 text-label text-text-muted">Elevated risk</p>
+            </div>
+            <span className="rounded-full border border-border px-3 py-1 text-label text-accent-violet">
+              Review
+            </span>
+          </div>
+          <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-text-primary/10">
+            <div className="h-full w-[72%] rounded-full bg-gradient-to-r from-accent-blue to-accent-violet" />
+          </div>
+        </div>
+
+        {/* Alert feed */}
+        <div className="mt-4 space-y-2">
+          {ALERTS.map((alert) => (
+            <div
+              key={alert.title}
+              className="flex items-start gap-3 rounded-[12px] border border-border bg-background/30 p-3"
+            >
+              <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${LEVEL_DOT[alert.level]}`} />
+              <div className="min-w-0">
+                <p className="truncate text-label font-medium text-text-primary">
+                  {alert.title}
+                </p>
+                <p className="text-label text-text-muted">{alert.meta}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function DevSection() {
   return (
     <Section id="fortgate-aml">
@@ -76,17 +145,9 @@ export default function DevSection() {
             </div>
           </Reveal>
 
-          {/* Right: product visual */}
+          {/* Right: product visual — risk score + alert feed mock */}
           <Reveal delay={0.1}>
-            <div className="rounded-card border border-border bg-card-surface p-2">
-              <div className="aspect-[4/3] w-full rounded-[14px] bg-gradient-to-br from-accent-violet/20 to-accent-blue/10">
-                <div className="grid h-full place-items-center">
-                  <span className="text-label text-text-muted">
-                    Product visual placeholder
-                  </span>
-                </div>
-              </div>
-            </div>
+            <RiskDashboardMock />
           </Reveal>
         </div>
       </Container>
